@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[functions]
+  # Netlify Pro allows up to 26s for sync functions
+  # For longer AI generation, we use background jobs + polling
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
